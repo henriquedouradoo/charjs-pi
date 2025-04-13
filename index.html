@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart.js PI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content">
+    <div class="grafico-content">
+        <h2>Temperatura e Umidade Média:</h2>
+        <div class="linhas">
+            <canvas id="graficoLine"></canvas>
+        </div>
+    </div>
+    <div class="grafico-content">
+        <h2>Temperatura e Umidade Média:</h2>
+        <div class="barras">
+            <canvas id="graficoBar"></canvas>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const graficoLinha = document.getElementById('graficoLine');
+
+    new Chart(graficoLinha, {
+        type: 'line',
+        data: {
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+            datasets: [{
+                label: 'Temperatura',
+                data: [30, 29, 28, 25, 22, 23],
+                borderWidth: 3,
+                borderColor: 'crimson',
+                backgroundColor: 'crimson'
+            },
+            {
+                label: 'Umidade',
+                data: [80, 82, 80, 85, 80, 83],
+                borderWidth: 3,
+                borderColor: 'cadetblue',
+                backgroundColor: 'cadetblue'
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    const graficoBarra = document.getElementById('graficoBar');
+
+    new Chart(graficoBarra, {
+        type: 'bar',
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets: [{
+                label: 'Temperatura Média',
+                data: [22, 24, 27, 23, 20, 18],
+                borderWidth: 3,
+                borderColor: 'crimson',
+                backgroundColor: 'crimson'
+            },
+            {
+                label: 'Umidade Média',
+                data: [90, 89, 93, 87, 88, 82],
+                borderWidth: 3,
+                borderColor: 'cadetblue',
+                backgroundColor: 'cadetblue'
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

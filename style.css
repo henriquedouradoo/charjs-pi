@@ -1,0 +1,26 @@
+
+    body {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .content {
+        display: flex;
+        margin-top: 7rem;
+    }
+
+    .grafico-content {
+        align-items: center;
+        text-align: center;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+   
+    .linhas {
+        width: 720px;
+    }
+
+    .barras {
+        width: 720px;
+    }
+
